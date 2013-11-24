@@ -1083,13 +1083,12 @@ p.form_error
     margin-bottom: -2px;
 }
 
-input.lang
+button.lang
 {
     padding: 0px;
     border: none;
     background: transparent;
     color: #666;
-    text-decoration: underline;
     cursor: pointer;
-    padding-left: -5px;
+    font-size: 14px;
 }

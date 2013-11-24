@@ -18,11 +18,11 @@
                 <div class="lang">
                     <form method="POST" action='/i18n/setlang/'>
                         {% csrf_token %}
-                        <img src="/static/images/ch.png" alt="Chine" /><input type = 'submit' name="language" value="ch" class='lang'/>
+                        <button type = 'submit' name="language" value="zh-cn" class='lang'><img src="/static/images/ch.png" alt="Chine" /> Ch</button>
                         <br />
-                        <img src="/static/images/us.png" alt="USA" /><input type = 'submit' name="language" value="en" class='lang'/>
+                        <button type = 'submit' name="language" value="en" class='lang'><img src="/static/images/us.png" alt="USA" /> Eng</button>
                         <br />
-                        <img src="/static/images/ru.png" alt="Russian" /><input type = 'submit' name="language" value="ru" class='lang'/>
+                        <button type = 'submit' name="language" value="ru" class='lang'><img src="/static/images/ru.png" alt="Russian" />Рус</button>
                     </form>
                 </div>
 

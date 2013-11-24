@@ -157,9 +157,9 @@ CKEDITOR_CONFIGS = {
 }
 
 LOCALES = (
-    ('ru-RU', u'Russian'),
+    ('ru-RU', u'Русский'),
     ('en', u'English'),
-    ('ch', u'Chinese'),
+    ('zh-cn', u'简体中文'),
 )
 
 LOCALE_PATHS = (
