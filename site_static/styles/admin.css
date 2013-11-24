@@ -43,4 +43,4 @@ body
     
 }
 
-#container {width: 370px !important;}
+body.login #container {width: 370px !important;}
