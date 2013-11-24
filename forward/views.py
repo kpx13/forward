@@ -20,6 +20,10 @@ def get_common_context(request):
     c['lang'] = request.LANGUAGE_CODE
     c['request_url'] = request.path
     c['is_debug'] = settings.DEBUG
+    c['field_1'] = config_value('MyApp', 'field_1')
+    c['field_2'] = config_value('MyApp', 'field_2')
+    c['field_3'] = config_value('MyApp', 'field_3')
+    c['field_4'] = config_value('MyApp', 'field_4')
     
     c.update(csrf(request))
     return c

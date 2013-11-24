@@ -45,14 +45,8 @@ class CustomIndexDashboard(Dashboard):
             modules.ModelList(
                 title = u'Страницы и Контент',
                 models=(
-                    'menu.models.Menu',
                     'pages.models.Page',
                     'gallery.models.Photo',
-                    'news.models.Article',
-                    'programs.models.Program',
-                    'review.models.Review',
-                    'slideshow.models.Slider',
-                    'partners.models.Partner',
                 ),
             )
         )
@@ -60,10 +54,10 @@ class CustomIndexDashboard(Dashboard):
         
         self.children.append(
             modules.ModelList(
-                title = u'Заявки и Подписки',
+                title = u'Заявки и Заказы',
                 models=(
                     'order.models.Order',
-                    'subscribe.models.Subscribe',
+                    'feedback.models.Feedback',
                 ),
             )
         )
