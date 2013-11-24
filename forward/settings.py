@@ -110,7 +110,7 @@ INSTALLED_APPS = (
     
     'feedback',
     'pages',
-    'orders',
+    'order',
     'gallery',
 )
 

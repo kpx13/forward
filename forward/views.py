@@ -6,6 +6,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.contrib.auth.models import User
 from feedback.forms import FeedbackForm
+from order.forms import OrderForm
 import config
 from livesettings import config_value
 from django.conf import settings
@@ -50,14 +51,23 @@ def services(request):
 
 def order(request):
     c = get_common_context(request)
+    #c.update({'p': Page.get('order', c['lang'])})
+    if request.method == 'GET':
+        c.update({'form': OrderForm()})
+    elif request.method == 'POST':
+        form = OrderForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            form = OrderForm()
+            c['feedback_ok'] = True
+        c.update({'form': form})
     return render_to_response('order.html', c, context_instance=RequestContext(request))
 
 def contacts(request):
     c = get_common_context(request)
-    c.update({'p': Page.get('contacts', c['lang'])})
+    #c.update({'p': Page.get('contacts', c['lang'])})
     if request.method == 'GET':
         c.update({'form': FeedbackForm()})
-        return render_to_response('contacts.html', c, context_instance=RequestContext(request))
     elif request.method == 'POST':
         form = FeedbackForm(request.POST)
         if form.is_valid():
@@ -65,4 +75,4 @@ def contacts(request):
             form = FeedbackForm()
             c['feedback_ok'] = True
         c.update({'form': form})
-        return render_to_response('contacts.html', c, context_instance=RequestContext(request))
+    return render_to_response('contacts.html', c, context_instance=RequestContext(request))

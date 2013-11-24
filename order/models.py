@@ -8,11 +8,11 @@ class Order(models.Model):
     country  = models.CharField(u'Страна', blank=True, max_length=512)
     city  = models.CharField(u'Город', blank=True, max_length=512)
     desc  = models.CharField(u'Описание товара', blank=True, max_length=2048)
-    contact  = models.CharField(u'Контактное лицо', max_length=255)
+    contact  = models.CharField(u'Контактное лицо', blank=True, max_length=255)
     phone  = models.CharField(u'Телефон', blank=True, max_length=255)
     email  = models.CharField(u'Email', blank=True, max_length=255)
     file = models.FileField(upload_to=lambda instance, filename: 'uploads/orders/' + translit.translify(filename), 
-                              null=True, blank=True, max_length=256, verbose_name=u'файл')
+                            null=True, blank=True, max_length=256, verbose_name=u'файл')
     request_date = models.DateTimeField(u'дата добавления', auto_now_add=True)
     
     class Meta:

@@ -1063,3 +1063,33 @@ line-height: 28px!important;
     background: transparent;     
     padding-left: 1em    ;        
 }
+
+.errorlist
+{
+    color: #000;
+}
+
+h2.form_ok
+{
+    color: #000;
+    text-decoration: underline;
+}
+
+p.form_error
+{
+    color: red;
+    font-size: 0.9em;
+    padding: 0px;
+    margin-bottom: -2px;
+}
+
+input.lang
+{
+    padding: 0px;
+    border: none;
+    background: transparent;
+    color: #666;
+    text-decoration: underline;
+    cursor: pointer;
+    padding-left: -5px;
+}
