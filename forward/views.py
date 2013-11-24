@@ -37,16 +37,18 @@ def page(request, page_name):
 def home(request):
     c = get_common_context(request)
     c['request_url'] = 'home'
-    #c['home_content'] = Page.get('home', c['lang'])['content']
+    c['content'] = Page.get('home', c['lang'])['content']
     return render_to_response('home.html', c, context_instance=RequestContext(request))
 
 def about(request):
     c = get_common_context(request)
-    #c['p'] = Page.get('about', c['lang'])
+    c['content'] = Page.get('about', c['lang'])['content']
     return render_to_response('about.html', c, context_instance=RequestContext(request))
 
 def services(request):
     c = get_common_context(request)
+    c['left'] = Page.get('servicesleft', c['lang'])['content']
+    c['right'] = Page.get('servicesright', c['lang'])['content']
     return render_to_response('services.html', c, context_instance=RequestContext(request))
 
 def order(request):
@@ -65,7 +67,7 @@ def order(request):
 
 def contacts(request):
     c = get_common_context(request)
-    #c.update({'p': Page.get('contacts', c['lang'])})
+    c.update({'content': Page.get('contacts', c['lang'])['content']})
     if request.method == 'GET':
         c.update({'form': FeedbackForm()})
     elif request.method == 'POST':
