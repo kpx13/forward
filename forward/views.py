@@ -12,6 +12,7 @@ from livesettings import config_value
 from django.conf import settings
 
 from pages.models import Page
+from statistic.models import Stat
 
 PAGINATION_COUNT = 5
 
@@ -24,6 +25,7 @@ def get_common_context(request):
     c['field_2'] = config_value('MyApp', 'field_2')
     c['field_3'] = config_value('MyApp', 'field_3')
     c['field_4'] = config_value('MyApp', 'field_4')
+    c['phone'] = config_value('MyApp', 'PHONE')
     
     c.update(csrf(request))
     return c
@@ -42,6 +44,7 @@ def home(request):
     c = get_common_context(request)
     c['request_url'] = 'home'
     c['content'] = Page.get('home', c['lang'])['content']
+    c['stat'] = Stat.objects.all()
     return render_to_response('home.html', c, context_instance=RequestContext(request))
 
 def about(request):

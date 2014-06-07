@@ -46,7 +46,8 @@ class CustomIndexDashboard(Dashboard):
                 title = u'Страницы и Контент',
                 models=(
                     'pages.models.Page',
-                    'gallery.models.Photo',
+                    #'gallery.models.Photo',
+                    'statistic.models.Stat',
                 ),
             )
         )

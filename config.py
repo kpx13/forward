@@ -19,6 +19,13 @@ config_register(StringValue(
         default = 'annkpx@gmail.com'
     ))
 
+config_register(StringValue(
+                            MYAPP_GROUP,
+        'PHONE', 
+        description = u'Телефон компании',
+        default = '+7 (495) 748-88-27'
+    ))
+
 
 config_register(StringValue(
                             MYAPP_GROUP,

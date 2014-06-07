@@ -30,7 +30,7 @@
                 <li style="left:915px;">
                     <div class="slider_in">
                         <div id="gruz">
-                            <a class="main_fon" href="#"></a>
+                            <a class="main_fon" href="/contacts/"></a>
                             <a class="city moskow" href="#"><span></span>Москва</a>
                             <a class="city omsk red" href="#"><span></span>Омск</a>
                             <a class="city yrumchi red" href="#"><span></span>Урумчи</a>
@@ -40,12 +40,11 @@
                             <a class="city shanhai red" href="#"><span></span>Шанхай</a>
                             <a class="city guanchgou red" href="#"><span></span>Гунчджоу</a>
                             <div class="forma">
-                                <span>Выберите пожалуйста</span>
+                                <span>Пожалуйста, выберите схему доставки</span>
                                 <br />
                                 <div class="selected_select">
                                     <select>
-                                        <option value="0">Схема доставки</option>
-                                        <option value="1">Морская/мультимодальная</option>
+                                        <option value="1" selected>Морская/мультимодальная</option>
                                         <option value="2">Сухопутная</option>
                                         <option value="3">Авиа</option>
                                     </select>
@@ -65,16 +64,11 @@
             </ul>
         </div>
         <div class="left_s">
-            <span class="stat">Статистика</span>
-
-                <span class="red">{{ field_1 }}</span>
-                <span>доставлен груз до пункта назначения</span>
-
-
-                <span class="red">{{ field_2 }}</span>
-                <span>довольных клиентов</span>
-
-            <a href="#" class="plus"></a>
+                <span class="stat">Статистика</span>
+                {% for s in stat %}
+                    <span class="red">{{ s.parametr }}</span>
+                    <span>{{ s.note }}</span>
+                {% endfor %}
         </div>
     </div><!-- main_slider -->
     <div class="preimuschestva">
@@ -98,7 +92,6 @@
     </div><!-- preimuschestva -->
     <div class="content">
         <div class="content_in">
-            <div class="left">
                 <h1>
                     Добро пожаловать на сайт  Форвард Экспресс!
                 </h1>
@@ -106,30 +99,6 @@
                     о компании
                 </h2>
                 {{ content|safe }}
-            </div>
-            <div class="right">
-                <div class="akcii">
-                    <ul>
-                        <li>
-                            <a href="#"><img src="/static/images/img1.jpg" alt="" /></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="/static/images/img2.jpg" alt="" />
-                                <div>
-                                    Акция всем до 13 августа 2013
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="/static/images/img3.jpg" alt="" />
-                                <div>
-                                    Для нас открыты все дороги!
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </div>
     </div><!-- content -->
 {% endblock %}
