@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Услуга: {{ s.title }}{% endblock %}
+
+{% block content %}
+    <div class="kroshki">
+        <ul>
+            <li>
+                <a href="/">Главная</a>
+            </li>
+            <li>
+                <a href="/services/">> Услуги</a>
+            </li>
+            <li>
+                > {{ s.title }}
+            </li>
+        </ul>
+    </div><!-- kroshki -->
+
+    <div class="content">
+        <div class="content_in">
+                <h1>
+                    {{ s.title }}
+                </h1>
+                <div class="service-detail">
+					<img src="/media/{{ icon }}">
+				</div>
+                {{ s.content|safe }}
+        </div>
+    </div><!-- content -->
+{% endblock %}

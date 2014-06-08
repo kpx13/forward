@@ -1092,3 +1092,15 @@ button.lang
     cursor: pointer;
     font-size: 14px;
 }
+
+/*---------------service-detail-------------*/
+
+div.service-detail{
+margin-top: 30px;
+}
+
+div.service-detail img{
+width: 152px;
+float: left;
+margin-right: 25px;
+}

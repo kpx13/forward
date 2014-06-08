@@ -23,6 +23,12 @@
                 <h2>
                     услуги нашей компании
                 </h2>
+                    <ul class="uslugi">
+                        {% for s in services %}
+                            <li><a href="/service/{{ s.slug }}">{{ s.title }} &gt;</a> <span>{{ s.desc }}</span></li>
+                        {% endfor %}
+                    </ul>
+
                     {{ left|safe }}
             </div>
             <div class="right">

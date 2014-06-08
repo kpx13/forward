@@ -12,6 +12,7 @@ from livesettings import config_value
 from django.conf import settings
 
 from pages.models import Page
+from services.models import Service
 from statistic.models import Stat
 
 PAGINATION_COUNT = 5
@@ -56,7 +57,18 @@ def services(request):
     c = get_common_context(request)
     c['left'] = Page.get('servicesleft', c['lang'])['content']
     c['right'] = Page.get('servicesright', c['lang'])['content']
+    c['services'] = Service.objects.all()
     return render_to_response('services.html', c, context_instance=RequestContext(request))
+
+def service_det(request, page_name):
+    c = get_common_context(request)
+    p = Service.get(page_name, request.LANGUAGE_CODE)
+
+    if p:
+        c.update({'s': p, 'icon': Service.objects.get(slug=page_name).icon1 })
+        return render_to_response('sevice_detail.html', c, context_instance=RequestContext(request))
+    else:
+        raise Http404()
 
 def order(request):
     c = get_common_context(request)

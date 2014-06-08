@@ -113,6 +113,7 @@ INSTALLED_APPS = (
     'order',
     'gallery',
     'statistic',
+    'services',
 )
 
 
