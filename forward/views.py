@@ -46,6 +46,7 @@ def home(request):
     c['request_url'] = 'home'
     c['content'] = Page.get('home', c['lang'])['content']
     c['stat'] = Stat.objects.all()
+    c['services'] = Service.objects.all()
     return render_to_response('home.html', c, context_instance=RequestContext(request))
 
 def about(request):

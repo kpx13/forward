@@ -17,13 +17,9 @@
                         <div id="uslugi">
                             <a class="main_fon" href="#"></a>
                             <h1>Услуги по поставке товаров «под ключ» </h1>
-                            <a class="usl u1" href="#"><span>Размещение заказов</span></a>
-                            <a class="usl u2" href="#"><span>Финансирование закупок</span></a>
-                            <a class="usl u3" href="#"><span>Контроль качества товара</span></a>
-                            <a class="usl u4" href="#"><span>Контроль отгрузки</span></a>
-                            <a class="usl u5" href="#"><span>Доставка товара</span></a>
-                            <a class="usl u6" href="#"><span>Таможенное оформление</span></a>
-                            <a class="usl u7" href="#"><span>Контроль разгрузки и учета</span></a>
+                            {% for s in services %}
+                                <a class="usl u{{ forloop.counter }}" href="/service/{{ s.slug }}"><span>{{ s.title }}</span></a>
+                            {% endfor %}
                         </div>
                     </div>
                 </li>
