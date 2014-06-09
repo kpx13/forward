@@ -168,8 +168,10 @@ border-bottom: 1px solid silver;
 .clock ul li div h5{
 margin:0 0 10px 0;
 }
+
 .clock ul li div span{
 font-size: 27px;
+letter-spacing:2px;
 }
 .clock ul li div.clock_in {
 background: url(../images/clock_bg.png) no-repeat;

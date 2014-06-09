@@ -114,3 +114,21 @@ $(function () {
 
 
 });
+
+function getTime() {
+        var d = new Date();
+        var hours = d.getUTCHours();
+        var minutes = d.getUTCMinutes();
+        if (minutes <= 9) minutes = "0" + minutes;
+        var setTime = [hours + 3, hours + 10, hours + 7];
+        var countryLength = $(".h").size();
+        for (var i = 0; i < countryLength; i++) {
+            if (setTime[i] > 23) {
+                setTime[i] -= 24
+            }
+            if (setTime[i] <= 9) setTime[i] = "0" + setTime[i];
+            $(".h").eq(i).html(setTime[i])
+        }
+        $(".clock").find(".m").html(minutes);
+    }
+    setInterval(getTime, 2000)
