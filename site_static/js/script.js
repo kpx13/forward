@@ -111,8 +111,6 @@ $(function () {
                 break;
         }
     }
-
-
 });
 
 function getTime() {
@@ -120,7 +118,7 @@ function getTime() {
         var hours = d.getUTCHours();
         var minutes = d.getUTCMinutes();
         if (minutes <= 9) minutes = "0" + minutes;
-        var setTime = [hours + 3, hours + 10, hours + 7];
+        var setTime = [hours + 4, hours + 10, hours + 7];
         var countryLength = $(".h").size();
         for (var i = 0; i < countryLength; i++) {
             if (setTime[i] > 23) {
